@@ -1,0 +1,25 @@
+<section data-ng-controller="UpdateProfileController">
+    <div id="powerwidgets">
+        <div powerwidget-init class="powerwidget dark-blue" id="datatable-basic-init" data-widget-icon="fa fa-group" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-refresh="false" data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-setstyle="red">
+            <header>
+                <h2>Update Profile</h2>
+               
+            </header>
+
+
+            <div class="inner-spacer">
+                <div class="form-group col-md-6 col-md-offset-3">
+                    <input class="form-control" type="text" placeholder="First Name" ng-model="user.firstName">
+                </div>
+                <div class="form-group col-md-6 col-md-offset-3">
+                    <input class="form-control" type="text" placeholder="Last Name" ng-model="user.lastName">
+                </div>
+                <div class="form-group col-md-6 col-md-offset-3">
+                    <input class="form-control" type="email" placeholder="Email" ng-model="user.email" disabled="">
+                </div>
+                <button ng-disabled="!user.firstName || !user.lastName || !user.email || !user.clientName" type="button" class="btn btn-success btn-lg col-md-6 col-md-offset-3" ng-click="addNewUser()"><span class="glyphicon glyphicon-ok-sign"></span> Udpate</button>
+            </div>
+        </div>
+    </div>
+
+</section>

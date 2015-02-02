@@ -1,0 +1,95 @@
+<section data-ng-controller="AddUserController">
+    <!-- <div class="breadcrumb clearfix">
+        <ul>
+            <li><a href="#!"><i class="fa fa-home"></i></a>
+            </li>
+            <li><a href="#!">Home</a>
+            </li>
+            <li class="active">Add Users</li>
+        </ul>
+    </div> -->
+    <div id="powerwidgets">
+        <div powerwidget-init class="powerwidget dark-blue" id="datatable-basic-init" data-widget-icon="fa fa-group" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-refresh="false" data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-setstyle="red">
+            <header>
+                <h2>Users</h2>
+                <a class="btn btn-success inline-button" ng-click="showNewUserModal()"><i class="fa fa-plus-circle"></i> Add New User</a>
+            </header>
+
+
+            <div class="inner-spacer">
+                <table class="table table-striped table-hover" datatable-init>
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email Address</th>
+                            <th>Client Name</th>
+                            <th>Role</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>john.doe@gmail.com</td>
+                            <td>Agency</td>
+                            <td>User</td>
+                            <td><p><button class="btn btn-primary btn-xs edit-table-btn" data-title="Edit"><span class="glyphicon glyphicon-pencil"></span></button> <button class="btn btn-danger btn-xs delete-table-btn" data-title="Delete"><span class="glyphicon glyphicon-trash"></span></button></p></td>
+                        </tr>
+                        <tr>
+                            <td>Jane</td>
+                            <td>Doe</td>
+                            <td>jane.doe@gmail.com</td>
+                            <td>Agency</td>
+                            <td>Admin</td>
+                            <td><p><button class="btn btn-primary btn-xs edit-table-btn" data-title="Edit"><span class="glyphicon glyphicon-pencil"></span></button> <button class="btn btn-danger btn-xs delete-table-btn" data-title="Delete"><span class="glyphicon glyphicon-trash"></span></button></p></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email Address</th>
+                            <th>Client Name</th>
+                            <th>Role</th>
+                            <th>Action</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/ng-template" id="addUser.html">
+        <div class="modal-header">
+            <button type="button" ng-click="close()" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            </button>
+            <h4 class="modal-title custom_align" id="Heading">Add New User</h4>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="First Name" ng-model="user.firstName">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Last Name" ng-model="user.lastName">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="email" placeholder="Email" ng-model="user.email">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Client Name" ng-model="user.clientName">
+            </div>
+            <div class="form-group">
+                <select class="form-control" placeholder="Role" ng-model="user.role">
+                    <option>User</option>
+                    <option>Admin</option>
+                </select>
+            </div>
+        </div>
+        <div class="modal-footer ">
+            <button ng-disabled="!user.firstName || !user.lastName || !user.email || !user.clientName" type="button" class="btn btn-success btn-lg" style="width: 100%;" ng-click="addNewUser()"><span class="glyphicon glyphicon-ok-sign"></span> Create</button>
+        </div>
+    </script>
+
+</section>

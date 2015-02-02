@@ -1,0 +1,116 @@
+<section data-ng-controller="AgentController">
+    <!-- <div class="breadcrumb clearfix">
+        <ul>
+            <li><a href="#!"><i class="fa fa-home"></i></a>
+            </li>
+            <li><a href="#!">Home</a>
+            </li>
+            <li class="active">Add Agents</li>
+        </ul>
+    </div> -->
+    <div id="powerwidgets">
+        <div powerwidget-init class="powerwidget dark-blue" id="datatable-basic-init" data-widget-icon="fa fa-cog" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-refresh="false" data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-setstyle="red">
+            <header>
+                <h2>Agents</h2>
+                <a class="btn btn-success inline-button" ng-click="showNewAgentModal()"><i class="fa fa-plus-circle"></i> Add New Agent</a>
+            </header>
+
+
+            <div class="inner-spacer">
+                <table class="table table-striped table-hover orb-form customzd-toggle" datatable-init>
+                    <thead>
+                        <tr>
+                            <th>Agent Name</th>
+                            <th>Scheduled</th>
+                            <th>Recording</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Update on Latest Cars</td>
+                            <td>
+                                <label class="toggle state-success">
+                                    <input type="radio" name="radio-toggle" checked>
+                                    <i></i>&nbsp;</label>
+                            </td>
+                            <td>
+                                <label class="toggle state-error">
+                                    <input type="checkbox" name="checkbox-toggle">
+                                    <i></i>&nbsp;</label>
+                            </td>
+                            <td>
+                                <p>
+                                    <button class="btn btn-primary btn-xs edit-table-btn" data-title="Edit"><span class="glyphicon glyphicon-pencil" ng-click="showConfigAgentModal()"></span>
+                                    </button>
+                                    <button class="btn btn-danger btn-xs delete-table-btn" data-title="Delete"><span class="glyphicon glyphicon-trash"></span>
+                                    </button>
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Agent Name</th>
+                            <th>Scheduled</th>
+                            <th>Recording</th>
+                            <th>Action</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/ng-template" id="addAgent.html">
+        <div class="modal-header">
+            <button type="button" ng-click="close()" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            </button>
+            <h4 class="modal-title custom_align" id="Heading">Add New agent</h4>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Agent Name" ng-model="agent.name">
+            </div>
+
+        </div>
+        <div class="modal-footer ">
+            <button ng-disabled="!agent.name" type="button" class="btn btn-success btn-lg" style="width: 100%;" ng-click="addNewAgent()"><span class="glyphicon glyphicon-ok-sign"></span> Create</button>
+        </div>
+    </script>
+
+    <script type="text/ng-template" id="configAgent.html">
+        <div class="modal-header">
+            <button type="button" ng-click="close()" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            </button>
+            <h4 class="modal-title custom_align" id="Heading">Config agent (Agent Name)</h4>
+        </div>
+        <div class="modal-body">
+
+            <div class="form-group">
+                <label>Select Frequency</label>
+                <select class="form-control" placeholder="Frequency" ng-model="agent.frequency">
+                    <option value="Daily">Daily</option>
+                    <option valiue="Weekly">Weekly</option>
+                    <option valiue="Fortnight">Fortnight</option>
+                    <option valiue="Monthly">Monthly</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Select Schedule Start Date</label>
+                <div id="inline" class="col-md-6 col-md-offset-3" inline-datepicker></div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="form-group">
+            <label>Enter Email</label>
+                <input class="form-control" type="email" placeholder="Email" ng-model="agent.email">
+            </div>
+
+        </div>
+        <div class="modal-footer ">
+            <button ng-disabled="!agent.name" type="button" class="btn btn-danger btn-lg" style="width: 100%;" ng-click="configAgent()"><span class="glyphicon glyphicon-ok-sign"></span> Start Recording</button>
+        </div>
+    </script>
+
+
+</section>

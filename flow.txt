@@ -1,0 +1,30 @@
+User registration
+-----------------
+1. Register and Login
+2. Admin triggers registration
+
+New search engine
+-----------------
+1. User should be able to create/append a custom search engine by entering the sites to search and the keywords.
+2. The search XML should be updated.
+3. User should be able to view the search results XML parsed in form of a table
+
+Agent
+-----
+1. User has an option to create an agent/macro. Agent is like a macro where actions are recorded to be run periodically.
+2. The User Logs into his/her account and clicks on create an agent.
+3. The user is asked to enter an agent name. There cannot be 2 agents with same name for a particular user.
+4. Once the agent is created the user should get an option to start an agent.
+5. The user should also be able to edit an agent.
+6. The user should also be able to delete an agent.
+7. An agent can be edited/set the following
+	a.) How frequently should the agent be run i.e.., Daily, Weekly, Fortnightly, and Monthly.
+	b.)The user should be able to specify the time and also set the time zone for running it.
+	c.)The email id the report should be sent to
+8. There should be an indicator when an agent is started.
+
+* The agent activated /running is important for the chrome extension “save to Template” context menu.
+
+* When the “save to Template” is selected from the context menu we need to check if an agent is running else 
+	1. We need to ask the user to run the agent.
+	2. If the user runs an existing agent the previous setting if any for that agent will be deleted.

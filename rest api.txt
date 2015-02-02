@@ -1,0 +1,48 @@
+signup : POST
+http://localhost:3000/auth/signup
+{
+"firstName" : "c",
+"lastName" : "c",
+"email" : "c@c.com",
+"password" : "12345678",
+"roles" : ["user"]
+}
+
+signin : POST
+http://localhost:3000/auth/signin
+{
+	 "username": "a@a.com",
+"password" : "123456789"
+}
+
+change pwd : POST
+http://localhost:3000/users/password
+{
+"user" : {"id" : "54cc923045ef7fe32ceb328f"},
+"currentPassword" : "12345678",
+"newPassword" : "123456789",
+"verifyPassword" : "123456789"
+}
+
+pwd reset : POST
+http://localhost:3000/auth/forgot
+{
+"email" : "arvind.ravulavaru@gmail.com"
+}
+
+change password : POST
+http://localhost:3000/users/password
+{
+	 "newPassword": "12345678",
+  "currentPassword" : "123456789",
+  "verifyPassword" : "12345678",
+  "user" : {"id" : "54cc923045ef7fe32ceb328f"}
+}
+
+change profile : PUT
+http://localhost:3000/users
+{
+	 "firstName": "asdf",
+"lastName" : "ghjk",
+  "_id" : "54cc923045ef7fe32ceb328f"
+}
