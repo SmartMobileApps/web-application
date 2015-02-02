@@ -9,37 +9,39 @@ angular.module('user-management').controller('AddUserController', ['$scope', '$m
             });
         };
     }
-]).controller('newUserModalInstanceCtrl', ['growl', '$scope', '$modalInstance', function(growl, $scope, $modalInstance) {
+]).controller('newUserModalInstanceCtrl', ['growl', '$scope', '$modalInstance', 'UsermanagementFactory', function(growl, $scope, $modalInstance, UsermanagementFactory) {
 
     $scope.user = {
         firstName: '',
         lastName: '',
         email: '',
-        clientName: ''
+        role: '',
+        clientName: '',
+        password: '********'
     };
 
 
     $scope.addNewUser = function() {
 
-        // SchoolFactory.create($scope.regisSchool).success(function(data) {
-        //     growl.success('New school has been added successfully', {
-        //         ttl: -1
-        //     });
-        //     window.__table.api().ajax.reload();
-        //     $modalInstance.close();
-        // }).error(function(err) {
-        //     if (err && err.errorStatus > 0) {
-        //         growl.error(err.error, {
-        //             ttl: -1
-        //         });
-        //     }
-        //     $modalInstance.close();
-        // });
+        $scope.user.role = [$scope.user.role];
+        UsermanagementFactory.save($scope.user).success(function(data) {
+            growl.success('New user has been added successfully', {
+                ttl: -1
+            });
+            UsermanagementFactory.trigMail({
+                'email': $scope.user.email,
+                'newuser': true
+            });
+            //window.__table.api().ajax.reload();
+            $modalInstance.close();
+        }).error(function(err) {
 
-        growl.success('New user has been added successfully', {
-            ttl: -1
+            growl.error(err.message, {
+                ttl: -1
+            });
+
+            $modalInstance.close();
         });
-        $modalInstance.close();
     };
 
     $scope.close = function() {

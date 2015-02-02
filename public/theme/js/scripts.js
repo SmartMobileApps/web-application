@@ -3485,7 +3485,7 @@
                     },
                     password: {
                         required: true,
-                        minlength: 6,
+                        minlength: 5,
                         maxlength: 20
                     }
                 },
@@ -3505,17 +3505,66 @@
                     error.insertAfter(element.parent());
                 },
                 submitHandler: function(form) {
-                    
-                    location.href = "/dashboard";
+                    $('#error').hide();
+                    $.post('/auth/signin', {
+                        username: form[1].value,
+                        password: form[2].value
+                    }).success(function(data) {
+                        localStorage.setItem('user', JSON.stringify(data));
+                        location.href = "/dashboard";
+                    }).error(function(err) {
+                        $('#error').show();
+                    });
+                }
+            });
 
-                    // $.post('/auth/signin', {
-                    //     email: form[1].value,
-                    //     password: form[2].value
-                    // }).success(function(data) {
-                    //     location.href = "/dashboard";
-                    // }).error(function(err) {
-                    //     alert("Error");
-                    // });
+        }
+
+
+        if ($('#reset-form').length) {
+            $("#reset-form").validate({
+                // Rules for form validation
+                rules: {
+                    password: {
+                        required: true,
+                        minlength: 5,
+                        maxlength: 20
+                    },
+                    resetPassword: {
+                        required: true,
+                        minlength: 5,
+                        maxlength: 20,
+                        equalTo: "#password"
+                    }
+                },
+
+                // Messages for form validation
+                messages: {
+                    password: {
+                        required: 'Please enter a valid password'
+                    },
+                    resetPassword: {
+                        required: 'Please enter a valid password'
+                    }
+                },
+
+                errorPlacement: function(error, element) {
+                    error.insertAfter(element.parent());
+                },
+                submitHandler: function(form) {
+
+                    //location.href = "/dashboard";
+                    var token = $(location).attr('pathname').split('/')[$(location).attr('pathname').split('/').length - 1];
+
+                    $.post('/auth/reset/' + token, {
+                        newPassword: form[1].value,
+                        verifyPassword: form[2].value
+                    }).success(function(data) {
+                        localStorage.setItem('user', JSON.stringify(data));
+                        location.href = "/dashboard";
+                    }).error(function(err) {
+                        alert('Error!!');
+                    });
                 }
             });
 
@@ -4670,3 +4719,8 @@
 
 
 })(jQuery);
+
+function validateEmail(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}

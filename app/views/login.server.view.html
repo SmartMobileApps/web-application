@@ -1,78 +1,139 @@
 <!DOCTYPE html>
 
 <head>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Yuno | Login</title>
-<link href="/theme/css/styles.css" rel="stylesheet" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Yuno | Login</title>
+    <link href="/theme/css/styles.css" rel="stylesheet" type="text/css">
 
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-<script type="text/javascript" src="/theme/js/vendors/modernizr/modernizr.custom.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <script type="text/javascript">
+    if (localStorage.getItem('user')) {
+        location.href = '/dashboard';
+    }
+    </script>
+    <script type="text/javascript" src="/theme/js/vendors/modernizr/modernizr.custom.js"></script>
+    <style>
+    #error {
+        min-height: 27px;
+    }
+    </style>
 </head>
 
 <body>
-<div class="colorful-page-wrapper">
-  <div class="center-block">
-    <div class="login-block">
-      <form action="index.html" id="login-form" class="orb-form" method="post">
-        <header>
-          <div class="image-block"><img src="/theme/images/logo.png" alt="User" /></div>
-          Login to Yuno</header>
-        <fieldset>
-          <section>
-            <div class="row">
-              <label class="label col col-4">E-mail</label>
-              <div class="col col-8">
-                <label class="input"> <i class="icon-append fa fa-user"></i>
-                  <input type="email" name="email">
-                </label>
-              </div>
+    <div class="colorful-page-wrapper">
+        <div class="center-block">
+            <div class="login-block">
+                <form id="login-form" class="orb-form" method="post">
+                    <header>
+                        <div class="image-block"><img src="/theme/images/logo.png" alt="User" />
+                        </div>
+                        Login to Yuno</header>
+                    <fieldset>
+                        <section>
+                            <div class="row">
+                                <label class="label col col-4">E-mail</label>
+                                <div class="col col-8">
+                                    <label class="input"> <i class="icon-append fa fa-user"></i>
+                                        <input type="email" name="email">
+                                    </label>
+                                </div>
+                            </div>
+                        </section>
+                        <section>
+                            <div class="row">
+                                <label class="label col col-4">Password</label>
+                                <div class="col col-8">
+                                    <label class="input"> <i class="icon-append fa fa-lock"></i>
+                                        <input type="password" name="password">
+                                    </label>
+                                    <div class="note"><a href="#" data-toggle="modal" data-target="#forgotPassword">Forgot password?</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <div class="callout callout-warning" id="error" style="min-height:min-height: 29px; display:none;">
+                            <h6>Invalid Username or Password</h6>
+                        </div>
+                    </fieldset>
+                    <footer>
+                        <button type="submit" class="btn btn-default">Log in</button>
+                    </footer>
+                </form>
             </div>
-          </section>
-          <section>
-            <div class="row">
-              <label class="label col col-4">Password</label>
-              <div class="col col-8">
-                <label class="input"> <i class="icon-append fa fa-lock"></i>
-                  <input type="password" name="password">
-                </label>
-                <div class="note"><a href="#">Forgot password?</a></div>
-              </div>
-            </div>
-          </section>
-        </fieldset>
-        <footer>
-          <button type="submit" class="btn btn-default">Log in</button>
-        </footer>
-      </form>
+            <div class="copyrights"> Yuno &copy; 2014 </div>
+        </div>
     </div>
-    <div class="copyrights"> Yuno &copy; 2014 </div>
-  </div>
-</div>
 
-<!--Scripts--> 
-<!--JQuery--> 
-<script type="text/javascript" src="/theme/js/vendors/jquery/jquery.min.js"></script> 
-<script type="text/javascript" src="/theme/js/vendors/jquery/jquery-ui.min.js"></script> 
-
-<!--Forms--> 
-<script type="text/javascript" src="/theme/js/vendors/forms/jquery.form.min.js"></script> 
-<script type="text/javascript" src="/theme/js/vendors/forms/jquery.validate.min.js"></script> 
-<script type="text/javascript" src="/theme/js/vendors/forms/jquery.maskedinput.min.js"></script> 
-<script type="text/javascript" src="/theme/js/vendors/jquery-steps/jquery.steps.min.js"></script> 
-
-<!--NanoScroller--> 
-<script type="text/javascript" src="/theme/js/vendors/nanoscroller/jquery.nanoscroller.min.js"></script> 
-
-<!--Sparkline--> 
-<script type="text/javascript" src="/theme/js/vendors/sparkline/jquery.sparkline.min.js"></script> 
-
-<!--Main App--> 
-<script type="text/javascript" src="/theme/js/scripts.js"></script>
+    <!--Scripts-->
+    <!--JQuery-->
+    <script type="text/javascript" src="/theme/js/vendors/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/theme/js/vendors/jquery/jquery-ui.min.js"></script>
 
 
 
-<!--/Scripts-->
+    <script type="text/javascript" src="/theme/js/vendors/bootstrap/bootstrap.min.js"></script>
+
+    <!--Forms-->
+    <script type="text/javascript" src="/theme/js/vendors/forms/jquery.form.min.js"></script>
+    <script type="text/javascript" src="/theme/js/vendors/forms/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/theme/js/vendors/forms/jquery.maskedinput.min.js"></script>
+    <script type="text/javascript" src="/theme/js/vendors/jquery-steps/jquery.steps.min.js"></script>
+
+    <!--NanoScroller-->
+    <script type="text/javascript" src="/theme/js/vendors/nanoscroller/jquery.nanoscroller.min.js"></script>
+
+    <!--Sparkline-->
+    <script type="text/javascript" src="/theme/js/vendors/sparkline/jquery.sparkline.min.js"></script>
+
+    <!--Main App-->
+    <script type="text/javascript" src="/theme/js/scripts.js"></script>
+
+    <div class="modal fade" id="forgotPassword" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Forgot Passsword</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input class="form-control" type="email" placeholder="Enter your Email" id="fog_email">
+                    </div>
+                    <div class="callout callout-warning" id="fogerror" style="min-height:min-height: 29px; display:none;">
+                        <h6>Please enter a Valid Email</h6>
+                    </div>
+                </div>
+                <div class="modal-footer" style="padding-top: 0px; margin-top: 0px;">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-success" id="resetPassword">Reset Password</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    $(function() {
+        $('#resetPassword').on('click', function() {
+            $('#fogerror').hide();
+            var e = $('#fog_email').val().trim();
+            if (validateEmail(e)) {
+                $.post('/auth/forgot', {
+                    email: e
+                }).success(function(data) {
+                    alert('Success');
+                }).error(function(err) {
+                    alert('error');
+                });
+            } else {
+                $('#fogerror').show();
+            }
+
+        });
+    });
+    </script>
 
 </body>
+
 </html>

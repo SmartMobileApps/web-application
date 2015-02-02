@@ -5,19 +5,28 @@ module.exports = {
 	assets: {
 		lib: {
 			css: [
-				'public/lib/bootstrap/dist/css/bootstrap.min.css',
-				'public/lib/bootstrap/dist/css/bootstrap-theme.min.css',
+				'public/theme/css/styles.css',
+				'public/lib/angular-growl-v2/build/angular-growl.min.css'
 			],
 			js: [
-				'public/lib/angular/angular.min.js',
+				'public/lib/angular/angular.js',
 				'public/lib/angular-resource/angular-resource.js', 
 				'public/lib/angular-cookies/angular-cookies.js', 
 				'public/lib/angular-animate/angular-animate.js', 
 				'public/lib/angular-touch/angular-touch.js', 
 				'public/lib/angular-sanitize/angular-sanitize.js', 
-				'public/lib/angular-ui-router/release/angular-ui-router.min.js',
-				'public/lib/angular-ui-utils/ui-utils.min.js',
-				'public/lib/angular-bootstrap/ui-bootstrap-tpls.min.js'
+				'public/lib/angular-ui-router/release/angular-ui-router.js',
+				'public/lib/angular-ui-utils/ui-utils.js',
+				'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
+				'public/theme/js/vendors/jquery/jquery.min.js',
+				'public/theme/js/vendors/jquery/jquery-ui.min.js',
+				'public/theme/js/vendors/easing/jquery.easing.1.3.min.js',
+				'public/theme/js/vendors/nanoscroller/jquery.nanoscroller.min.js',
+				'public/theme/js/vendors/datatables/jquery.dataTables.min.js',
+				'public/theme/js/vendors/datatables/jquery.dataTables-bootstrap.js',
+				'public/theme/js/vendors/powerwidgets/powerwidgets.min.js',
+				'public/lib/angular-growl-v2/build/angular-growl.min.js',
+				'public/theme/js/vendors/horisontal/cbpHorizontalSlideOutMenu.js'
 			]
 		},
 		css: 'public/dist/application.min.css',

@@ -28,24 +28,6 @@
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>john.doe@gmail.com</td>
-                            <td>Agency</td>
-                            <td>User</td>
-                            <td><p><button class="btn btn-primary btn-xs edit-table-btn" data-title="Edit"><span class="glyphicon glyphicon-pencil"></span></button> <button class="btn btn-danger btn-xs delete-table-btn" data-title="Delete"><span class="glyphicon glyphicon-trash"></span></button></p></td>
-                        </tr>
-                        <tr>
-                            <td>Jane</td>
-                            <td>Doe</td>
-                            <td>jane.doe@gmail.com</td>
-                            <td>Agency</td>
-                            <td>Admin</td>
-                            <td><p><button class="btn btn-primary btn-xs edit-table-btn" data-title="Edit"><span class="glyphicon glyphicon-pencil"></span></button> <button class="btn btn-danger btn-xs delete-table-btn" data-title="Delete"><span class="glyphicon glyphicon-trash"></span></button></p></td>
-                        </tr>
-                    </tbody>
                     <tfoot>
                         <tr>
                             <th>First Name</th>
@@ -88,7 +70,7 @@
             </div>
         </div>
         <div class="modal-footer ">
-            <button ng-disabled="!user.firstName || !user.lastName || !user.email || !user.clientName" type="button" class="btn btn-success btn-lg" style="width: 100%;" ng-click="addNewUser()"><span class="glyphicon glyphicon-ok-sign"></span> Create</button>
+            <button ng-disabled="!user.firstName || !user.lastName || !user.email || !user.clientName || !user.role" type="button" class="btn btn-success btn-lg" style="width: 100%;" ng-click="addNewUser()"><span class="glyphicon glyphicon-ok-sign"></span> Create</button>
         </div>
     </script>
 

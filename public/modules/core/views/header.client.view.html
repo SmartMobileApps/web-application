@@ -1,96 +1,49 @@
 <div data-ng-controller="HeaderController">
-	 <nav class="main-header clearfix" role="navigation"> <a class="navbar-brand" href="index.html"><span class="text-blue">Yuno</span></a> 
-   
-     <!--Navigation Itself-->
-      
-      <div class="navbar-content"> 
-        
-        <!--Sidebar Toggler--> 
-        <a href="#" class="btn btn-default left-toggler" left-toggler><i class="fa fa-bars"></i></a> 
-        <!--Right Userbar Toggler--> 
-        <a href="#" class="btn btn-user right-toggler pull-right"><i class="entypo-vcard"></i> <span class="logged-as hidden-xs">Logged as</span><span class="logged-as-name hidden-xs">Anton Durant</span></a> 
-        <!--Fullscreen Trigger-->
-        <!--Settings Dropdown-->
-        <div class="btn-group pull-right">
-       
-          <div id="settings-dropdown" class="dropdown-menu keep_open orb-form">
-            <div class="dropdown-header">Settings <span class="badge pull-right">6</span></div>
-            <div class="dropdown-container">
-              <div class="nano">
-                <div class="nano-content">
-                  <ul class="settings-dropdown">
-                    <li>
-                      <label class="toggle">
-                        <input type="checkbox" name="checkbox-toggle" checked>
-                        <i></i>Prevent Midnblow</label>
-                    </li>
-                    <li>
-                      <label class="toggle">
-                        <input type="checkbox" name="checkbox-toggle" checked>
-                        <i></i>Sleep All nights</label>
-                    </li>
-                    <li>
-                      <label class="toggle">
-                        <input type="checkbox" name="checkbox-toggle" checked>
-                        <i></i>Drink more Coffee</label>
-                    </li>
-                    <li>
-                      <label class="toggle">
-                        <input type="checkbox" name="checkbox-toggle" checked>
-                        <i></i>Auto feed cat</label>
-                    </li>
-                    <li>
-                      <label class="toggle">
-                        <input type="checkbox" name="checkbox-toggle" checked>
-                        <i></i>Dummy Checkbox</label>
-                    </li>
-                    <li>
-                      <label class="toggle">
-                        <input type="checkbox" name="checkbox-toggle" checked>
-                        <i></i>Read More Books</label>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="dropdown-footer"> <a class="btn btn-dark" href="#">Save</a> </div>
-          </div>
-        </div>
-             
-        <!--Notifications Dropdown-->
+    <nav class="main-header clearfix" role="navigation"> <a class="navbar-brand" href="index.html"><span class="text-blue">Yuno</span></a>
 
-        <div class="btn-group">
-          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> <i class="entypo-cog"></i><span class="new"></span> Agent</button>
-          <div id="notification-dropdown" class="dropdown-menu">
-            <div class="dropdown-header">Agent <span class="badge pull-right">8</span></div>
-            <div class="dropdown-container">
-              <div class="nano">
-                <div class="nano-content">
-                  <ul class="notification-dropdown">
-                    <li class="bg-warning"><a href="#"> <span class="notification-icon"><i class="fa fa-bolt"></i></span>
-                      <h4>Server Down</h4>
-                      <p>Server #435 was shut down (Power loss)</p>
-                      <span class="label label-default"><i class="entypo-clock"></i> 59 mins ago</span> </a> </li>
-                    <li class="bg-info"><a href="#"> <span class="notification-icon"><i class="fa fa-bolt"></i></span>
-                      <h4>Too Many Connections</h4>
-                      <p>Too many connections to Database Server</p>
-                      <span class="label label-default"><i class="entypo-clock"></i> 2 hours ago</span> </a> </li>
-                    <li class="bg-danger"><a href="#"> <span class="notification-icon"><i class="fa fa-android"></i></span>
-                      <h4>Sausage Stolen</h4>
-                      <p>Someone stole your hot sausage</p>
-                      <span class="label label-default"><i class="entypo-clock"></i> 3 hours ago</span> </a> </li>
-                    <li class="bg-success"><a href="#"> <span class="notification-icon"><i class="fa fa-bolt"></i></span>
-                      <h4>Defragmentation Completed</h4>
-                      <p>Disc Defragmentation Completed on Server</p>
-                      <span class="label label-default"><i class="entypo-clock"></i> 3 hours ago</span> </a> </li>
-                  </ul>
+        <!--Navigation Itself-->
+
+        <div class="navbar-content">
+
+            <!--Sidebar Toggler-->
+            <a href="#" class="btn btn-default left-toggler" left-toggler><i class="fa fa-bars"></i></a>
+
+            <div class="btn-group pull-right" dropdown>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><i class="entypo-vcard"></i>
+                    </span>
+                </button>
+                <div id="settings-dropdown" class="dropdown-menu orb-form">
+                    <div class="dropdown-header">Profile</div>
+                    <div class="dropdown-container">
+                        <div class="nano">
+                            <div class="nano-content">
+                                <ul class="settings-dropdown">
+                                    <li>
+                                        <a href="javascript:" ng-click="navigate('#!/update-profile')" title="Update Profile">
+                                            <i class="fa fa-edit"></i>
+                                            <span> Update Profile</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a ng-click="navigate('#!/change-password')" href="javascript:" title="Change Password">
+                                            <i class="fa fa-key"></i>
+                                            <span> Change Password</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown-footer"> <a href="javascript:" ng-click="signout()" class="btn btn-dark pull-right" title="Signout"><i class="fa fa-power-off"></i><span> Signout</span></a></div>
                 </div>
-              </div>
             </div>
-            <div class="dropdown-footer"><a class="btn btn-dark" href="#">See All</a></div>
-          </div>
+
+
+
+            <div class="btn-group" ng-show="agentRunning">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> <i class="entypo-cog"></i><span class="new"></span> Agent</button>
+            </div>
+
         </div>
-        
-      </div>
     </nav>
 </div>

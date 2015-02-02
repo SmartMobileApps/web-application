@@ -22,16 +22,22 @@
     padding: 15px;
     width: 99% !important;
 }
-
-.cbp-hssubmenu > li a{
-	padding: 6px 12px;
+.cbp-hssubmenu > li a {
+    padding: 6px 12px;
 }
-
-.orb-form.customzd-toggle .toggle{
-    padding-right: 0px;
+.orb-form.customzd-toggle .toggle {
+    padding-right: 0;
 }
-
-.orb-form.customzd-toggle .toggle i{
-    right :0px;
-    left : 20px;
+.orb-form.customzd-toggle .toggle i {
+    right: 0;
+    left: 20px;
+}
+.main-header .dropdown-menu ul > li > a {
+    box-shadow: none;
+}
+.main-header .dropdown-menu .dropdown-container {
+    height: 74px;
+}
+.main-header .dropdown-menu .dropdown-footer {
+    margin-bottom: 20px;
 }
