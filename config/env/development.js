@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-	db: 'mongodb://localhost/yuno-dev',
+	db: 'mongodb://admin:admin123@ds039431.mongolab.com:39431/yunocorp',
 	app: {
 		title: 'Yuno - Development Environment'
 	},
