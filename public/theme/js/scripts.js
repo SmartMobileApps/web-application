@@ -3560,14 +3560,13 @@
                         newPassword: form[1].value,
                         verifyPassword: form[2].value
                     }).success(function(data) {
-                        localStorage.setItem('user', JSON.stringify(data));
-                        location.href = "/dashboard";
+                        //localStorage.setItem('user', JSON.stringify(data));
+                        location.href = "/";
                     }).error(function(err) {
                         alert('Error!!');
                     });
                 }
             });
-
         }
 
         // Checkout Form Validation

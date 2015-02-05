@@ -27,7 +27,7 @@
             </ul>
         </li> -->
 
-        <li><a ng-class="{active:isActive('/add-user')}" href="#!/add-user" title="Add User"><i class="entypo-user-add"></i><span> Add User</span></a>
+        <li ng-hide='_user.role === "user"'><a ng-class="{active:isActive('/add-user')}" href="#!/add-user" title="Add User"><i class="entypo-user-add"></i><span> Add User</span></a>
         </li>
 
         <!-- <li><a href="/" title="Signout"><i class="fa fa-power-off"></i><span> Signout</span></a>

@@ -52,6 +52,10 @@ var UserSchema = new Schema({
 		type: String,
 		trim: true
 	},
+	clientName: {
+		type: String,
+		trim: true
+	},
 	password: {
 		type: String,
 		default: '',

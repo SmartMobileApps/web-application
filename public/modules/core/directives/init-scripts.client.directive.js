@@ -1,3 +1,4 @@
+/*jshint -W061 */
 'use strict';
 
 angular.module('core').directive('initScripts', [
@@ -99,11 +100,29 @@ angular.module('core').directive('initScripts', [
             }, 125);
         }
     };
-}]).directive('datatableInit', [function() {
+}]).directive('datatableInit', ['directiveService', function(directiveService) {
+    // directiveService.subscribe(function() {
+    //     setTimeout(function() {
+    //         $('.data-table').dataTable();
+    //     }, 125);
+
+    // });
     return {
         restrict: 'A',
-        link: function(scope, iElement, iAttrs) {
-            $(iElement).dataTable();
+        link: function(s, e, a) {
+            // s.$watch('users', function(newValue, oldValue) {
+            //     console.log(newValue, oldValue);
+            //     if (newValue.length === 0) {
+            //         return false;
+            //     }
+            //     if (oldValue) {
+            //         $('.data-table').DataTable().fnDestroy();
+            //     }
+            //     setTimeout(function () {
+            //          $('.data-table').dataTable();
+            //     }, 125);
+               
+            // }, true);
         }
     };
 }]).directive('powerwidgetInit', [function() {

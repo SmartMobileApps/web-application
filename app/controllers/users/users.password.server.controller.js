@@ -180,21 +180,6 @@ exports.reset = function(req, res, next) {
 
             smtpTransport.sendMail(mailOptions, function(err) {
                 done(err, 'done');
-                if (err) {
-                    return res.status(500).send({
-                        message: 'reset fail',
-                        user: null
-                    });
-                } else {
-                	delete user.password;
-                	delete user.provider;
-                	delete user.salt;
-                    
-                    return res.status(200).send({
-                        message: 'reset success',
-                        user: user
-                    });
-                }
             });
         }
     ], function(err) {

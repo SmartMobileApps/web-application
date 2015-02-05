@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('core').controller('HeaderController', ['$scope', 'Menus', '$location',
-    function($scope, Menus, $location) {
+angular.module('core').controller('HeaderController', ['$rootScope', '$scope', '$location',
+    function($rootScope, $scope, $location) {
 
         $scope.isActive = function(route) {
             return route === $location.path();
@@ -15,5 +15,14 @@ angular.module('core').controller('HeaderController', ['$scope', 'Menus', '$loca
             localStorage.clear();
             location.href = '/';
         };
+
+        // check login status
+        var user = JSON.parse(localStorage.getItem('user'));
+        if (!user) {
+            $scope.signout();
+        } else {
+            user.role = user.roles[0];
+            $rootScope._user = user;
+        }
     }
 ]);

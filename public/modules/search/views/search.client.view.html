@@ -2,7 +2,7 @@
     <nav class="cbp-hsmenu-wrapper" cbp-menu id="cbp-hsmenu-wrapper">
         <div class="cbp-hsinner">
             <ul class="cbp-hsmenu">
-                <li> <a href="#"><span class="icon-bar"></span></a>
+                <li> <a style="margin-top:6px" href="#"><span class="icon-bar"></span><img src="../../../theme/images/arrow-down.png" style="margin-top:-15px"></a>
                     <ul class="cbp-hssubmenu">
                         <li class="addSiteWrapper">
                             <div class="col-md-6">
@@ -14,7 +14,7 @@
                                 <br/>
                                 <br/>
                                 <div class="inner-spacer col-md-8 col-md-offset-2 text-left">
-                                    <table class="table table-striped table-hover" >
+                                    <table class="table table-striped table-hover">
 
                                         <tbody>
                                             <tr>
@@ -47,7 +47,7 @@
                                 <br/>
                                 <br/>
                                 <div class="inner-spacer col-md-8 col-md-offset-2 text-left">
-                                    <table class="table table-striped table-hover" >
+                                    <table class="table table-striped table-hover">
 
                                         <tbody>
                                             <tr>
@@ -79,51 +79,55 @@
             </ul>
         </div>
     </nav>
-
+    <br/><br/>
     <div class="input-group col-md-6 col-md-offset-3">
         <input type="text" class="form-control" ng-model="searchText" placeholder="Search Here...">
         <span class="input-group-btn"><button class="btn btn-success" ng-disabled="!searchText" type="button">Search</button></span>
     </div>
-	<br/><br/>
-	<h2 class="text-center">Search Results</h2>
+    <br/>
+    <br/>
+    <h2 class="text-center">Search Results</h2>
     <div class="inner-spacer">
-                <table class="table table-striped table-hover" datatable-init>
-                    <thead>
-                        <tr>
-                            <th>S.NO</th>
-                            <th>Site Name</th>
-                            <th>Site Details</th>
-                            <th>Site Link</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Google</td>
-                            <td>Search Engine</td>
-                            <td><a target="_blank" href="http://google.com">http://google.com</a></td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Yahoo</td>
-                            <td>Search Engine</td>
-                            <td><a target="_blank" href="http://yahoo.com">http://yahoo.com</a></td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Bing</td>
-                            <td>Search Engine</td>
-                            <td><a target="_blank" href="http://bing.com">http://bing.com</a></td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                           <th>S.NO</th>
-                            <th>Site Name</th>
-                            <th>Site Details</th>
-                            <th>Site Link</th>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
+        <table class="table table-striped table-hover" datatable-init>
+            <thead>
+                <tr>
+                    <th>S.NO</th>
+                    <th>Site Name</th>
+                    <th>Site Details</th>
+                    <th>Site Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Google</td>
+                    <td>Search Engine</td>
+                    <td><a target="_blank" href="http://google.com">http://google.com</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Yahoo</td>
+                    <td>Search Engine</td>
+                    <td><a target="_blank" href="http://yahoo.com">http://yahoo.com</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Bing</td>
+                    <td>Search Engine</td>
+                    <td><a target="_blank" href="http://bing.com">http://bing.com</a>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>S.NO</th>
+                    <th>Site Name</th>
+                    <th>Site Details</th>
+                    <th>Site Link</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
 </section>

@@ -52,7 +52,7 @@
                                 </div>
                             </div>
                         </section>
-                        <div class="callout callout-warning" id="error" style="min-height:min-height: 29px; display:none;">
+                        <div class="callout callout-warning" id="error" style="min-height:29px; display:none;">
                             <h6>Invalid Username or Password</h6>
                         </div>
                     </fieldset>
@@ -101,8 +101,15 @@
                     <div class="form-group">
                         <input class="form-control" type="email" placeholder="Enter your Email" id="fog_email">
                     </div>
-                    <div class="callout callout-warning" id="fogerror" style="min-height:min-height: 29px; display:none;">
+                    <div class="callout callout-warning" id="fogerror" style="min-
+                    height: 29px; display:none;">
                         <h6>Please enter a Valid Email</h6>
+                    </div>
+                    <div class="callout callout-warning" id="fogerror-2" style="min-height: 29px; display:none;">
+                        <h6>Oops something went wrong!</h6>
+                    </div>
+                    <div class="callout callout-info" id="fogsuccess" style="min-height: 29px; display:none;">
+                        <h6>Reset email sent successfully!</h6>
                     </div>
                 </div>
                 <div class="modal-footer" style="padding-top: 0px; margin-top: 0px;">
@@ -116,15 +123,18 @@
     <script type="text/javascript">
     $(function() {
         $('#resetPassword').on('click', function() {
-            $('#fogerror').hide();
+            $('#fogerror,#fogerror-2').hide();
             var e = $('#fog_email').val().trim();
             if (validateEmail(e)) {
+                $('#resetPassword').prop('disabled', true);
                 $.post('/auth/forgot', {
                     email: e
                 }).success(function(data) {
-                    alert('Success');
+                    //alert('Success');
+                    $('#fogsuccess').show();
                 }).error(function(err) {
-                    alert('error');
+                    $('#fogerror-2').show();
+                    $('#resetPassword').prop('disabled', false);
                 });
             } else {
                 $('#fogerror').show();
